@@ -6,6 +6,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Compile Include="Unit.Types.fs" />
+        <Compile Include="Creational\FactoryMethod.Types.fs" />
         <Compile Include="Creational\FactoryMethodOop.fs" />
         <Compile Include="Creational\FactoryMethodFunctional.fs" />
         <Compile Include="Program.fs" />

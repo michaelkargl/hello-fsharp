@@ -1,19 +1,8 @@
 module DesignPatterns.Creational.FactoryMethodOop
 
+open DesignPatterns.Creational.FactoryMethodTypes
+
 // https://refactoring.guru/design-patterns/factory-method
-
-type ITransporter =
-    abstract member Deliver: unit -> string
-
-type Truck(fuelLiter: int) =
-    interface ITransporter with
-        member this.Deliver() =
-            $"Deliver by Truck ({fuelLiter}L gas remaining)"
-
-type Ship(fuelLiter: int) =
-    interface ITransporter with
-        member this.Deliver() =
-            $"Deliver by Ship ({fuelLiter}L fuel remaining)"
 
 [<AbstractClass>]
 type LogisticsFactory() =
@@ -34,7 +23,7 @@ type SeaLogisticsFactory() =
     override this.CreateTransporter() = Ship(this.FuelInLiter) 
 
 let runScenario () =
-    printfn "----------------FACTORY METHOD----------------------"
+    printfn "----------- FACTORY METHOD (OOP) --------------"
 
     let landTransporter: ITransporter =
         LandLogisticsFactory().AddFuel(100).CreateTransporter()
